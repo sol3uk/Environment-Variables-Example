@@ -26,7 +26,7 @@ function doWeatherSearch(position) {
 
 
 function ajaxCall() {
-    const apiKey = API_KEY;
+    const apiKey = $("#yourApiKey").val();
     const iconHrefStart = "http://openweathermap.org/img/wn/";
     const iconHrefEnd = "@2x.png";
     let url = "http://api.openweathermap.org/data/2.5/weather" + 
@@ -38,7 +38,6 @@ function ajaxCall() {
         type: "GET",
         dataType: "jsonp",
         success: function (data) {
-            console.log(data);
             const w = data.weather[0];
             $("#cityName").text(data.name);
             $("#weatherDetails").html(
@@ -49,7 +48,7 @@ function ajaxCall() {
                 )
         },
         error: function(){
-            $("#weatherDetails").text("Something went wrong!");
+            $("#weatherDetails").text("Something went wrong! Make sure to use a valid key!");
         }
     });
         
