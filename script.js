@@ -27,9 +27,9 @@ function doWeatherSearch(position) {
 
 function ajaxCall() {
     const apiKey = $("#yourApiKey").val();
-    const iconHrefStart = "http://openweathermap.org/img/wn/";
+    const iconHrefStart = "https://openweathermap.org/img/wn/";
     const iconHrefEnd = "@2x.png";
-    let url = "http://api.openweathermap.org/data/2.5/weather" + 
+    let url = "https://api.openweathermap.org/data/2.5/weather" + 
     "?lat=" + latLong.lat + "&lon=" + latLong.long + 
     "&units=metric" + 
     "&appid=" + apiKey
